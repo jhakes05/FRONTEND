@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>CICT - Extension Office Management System Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/src/app/fcomponents/fprofile/fprofile.component.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<img src="logo.png" alt="Logo" width="50px" height="50px">
+		<h1>CICT - Extension Office Management System</h1>
+		<nav>
+			<!-- Navigation links here -->
+		</nav>
+		<div class="profile">
+			<img id="profile-icon" src="<?php echo isset($_SESSION['uploadedImage']) ? $_SESSION['uploadedImage'] : 'profile.png'; ?>" alt="Profile Icon">
+			<div class="profile-info">
+				<h4>You are logged in as: Faculty</h4>
+				<p>Name: <?php echo $_SESSION['firstName'] . ' ' . $_SESSION['middleName'] . ' ' . $_SESSION['lastName']; ?></p>
+				<p>Email: <?php echo $_SESSION['email']; ?></p>
+				<!-- Add more information as needed -->
+			</div>
+		</div>
+		<div class="dark-mode-toggle">
+			<input type="checkbox" id="dark-mode-checkbox">
+			<label for="dark-mode-checkbox"></label>
+		</div>
+
+		<div class="notification">
+			<span id="notification-message"></span>
+		</div>
+	</header>
+	<div class="sidebar">
+		<ul>
+			<li><a href="fdashboard"><i class="fa fa-home"></i>Dashboard</a></li>
+			<li><a href="fprograms"><i class="fa fa-home"></i>Programs</a></li>
+      <li><a href="freport"><i class="fa fa-home"></i>Report</a></li>
+      <li><a href="fprofile" class="active"><i class="fa fa-home"></i>Profile</a></li>
+			<li><a href="login" onclick="return confirm('Are you sure you want to log out?');"><i class="fa fa-sign-out"></i>Logout</a></li>
+
+		</ul>
+</div>
+<div class="my-profile">
+  <div class="profile-header">
+    <h2>My Profile</h2>
+    <a href="#" class="edit-profile" onclick="openEditProfileWindow()">Edit Profile</a>
+  </div>
+  <div class="profile-picture-container">
+    <img id="profile-picture" src="<?php echo isset($_SESSION['uploadedImage']) ? $_SESSION['uploadedImage'] : 'https://via.placeholder.com/150'; ?>" alt="Profile Picture" class="profile-picture">
+    <label for="profile-picture-upload" class="profile-picture-upload-label">Upload Image</label>
+    <input type="file" id="profile-picture-upload" class="profile-picture-upload-input" accept="image/*" onchange="handleImageUpload(event)">
+  </div>
+  <p><strong>First Name:</strong> <?php echo $_SESSION['firstName']; ?></p>
+  <p><strong>Middle Name:</strong> <?php echo $_SESSION['middleName']; ?></p>
+  <p><strong>Last Name:</strong> <?php echo $_SESSION['lastName']; ?></p>
+  <p><strong>Email:</strong> <?php echo $_SESSION['email']; ?></p>
+</div>
+
+</body>
+</html>

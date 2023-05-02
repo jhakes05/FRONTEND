@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Extension Program Management</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/src/app/components/programs/programs.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <img src="/src/assets/image/logo.png" alt="Logo" width="50px" height="50px">
+    <h1>Extension Program Management System</h1>
+    <nav>
+        <!-- Navigation links here -->
+    </nav>
+    <div class="profile">
+        <img src="/src/assets/image/profile.png" alt="Profile Icon">
+        <div class="profile-info">
+            <h4>You are logged in as: Administrator</h4>
+            <p>Name: John Doe</p>
+            <p>Email: john.doe@example.com</p>
+            <p>Phone: 123-456-7890</p>
+            <h6>&copy; 2023 Extension Program Management System. All rights reserved.</h6>
+            <!-- Add more information as needed -->
+        </div>
+    </div>
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="dark-mode-checkbox">
+        <label for="dark-mode-checkbox"></label>
+    </div>
+    <div class="notification">
+        <span id="notification-message"></span>
+    </div>
+</header>
+
+<div class="sidebar">
+    <ul>
+        <li><a href="dashboard"><i class="fa fa-home"></i>Dashboard</a></li>
+        <li><a href="partner"><i class="fa fa-sitemap"></i>Partner</a></li>
+        <li><a href="profile"><i class="fa fa-book"></i>Profile</a></li>
+        <li><a href="programs"class="active"><i class="fa fa-file"></i>Programs</a></li>
+        <li><a href="report"><i class="fa fa-cog"></i>Report</a></li>
+        <li><a href="user"><i class="fa fa-cog"></i>User</a></li>
+        <li><a href="login" onclick="return confirm('Are you sure you want to log out?');"><i class="fa fa-sign-out"></i>Logout</a></li>
+      </ul>
+</div>
+
+<div class="main-content">
+    <h2>Create Extension Program</h2>
+    <form>
+        <div>
+            <label for="program-title">Program Title:</label>
+            <input type="text" id="program-title" name="program-title" required>
+        </div>
+        <div>
+            <label for="date-start">Date and Time (Start):</label>
+            <input type="datetime-local" id="date-start" name="date-start" required>
+        </div>
+        <div>
+            <label for="date-end">Date and Time (End):</label>
+            <input type="datetime-local" id="date-end" name="date-end" required>
+        </div>
+        <div>
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" required>
+        </div>
+        <div>
+            <label for="program-details">Program Details:</label>
+            <textarea id="program-details" name="program-details" rows="4" required></textarea>
+        </div>
+        <div>
+            <label for="program-lead">Program Lead:</label>
+            <input type="text" id="program-lead" name="program-lead" required>
+        </div>
+        <div>
+            <label for="program-members">Program Members:</label>
+            <input type="text" id="program-members" name="program-members" required>
+        </div>
+        <div>
+            <label for="participants-entity">Entity:</label>
+            <input type="text" id="participants-entity" name="participants-entity" required>
+        </div>
+        <div>
+            <label for="participants-list">List of Names:</label>
+            <textarea id="participants-list" name="participants-list" rows="4" required></textarea>
+        </div>
+        <div>
+            <label for="program-flow">Program Flow:</label>
+            <textarea id="program-flow" name="program-flow" rows="4"></textarea>
+        </div>
+        <div>
+            <label for="additional-details">Additional Details:</label>
+            <textarea id="additional-details" name="additional-details" rows="4"></textarea>
+        </div>
+        <div>
+            <label for="partner">Partner:</label>
+            <input type="text" id="partner" name="partner">
+        </div>
+        <div>
+            <label for="certificates">Certificates:</label>
+            <input type="file" id="certificates" name="certificates" accept="image/*, .pdf">
+        </div>
+        <div>
+            <label for="attendance">Participant's Attendance:</label>
+            <input type="file" id="attendance" name="attendance" accept=".doc, .docx, .xls, .xlsx, .pdf">
+        </div>
+        <div>
+            <label for="invitation">Invitation:</label>
+            <input type="file" id="invitation" name="invitation" accept="image/*, .pdf">
+        </div>
+        <div>
+            <input type="submit" value="Create Program">
+        </div>
+    </form>
+</div>
+</body>
+</html>

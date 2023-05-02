@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Admin - Extension Office Management System Dashboard</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/src/app/fcomponents/fdashboard/fdashboard.component.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<header>
+  <img src="/src/assets/image/logo.png" alt="Logo" width="50px" height="50px">
+  <h1>CICT - Extension Office Management System</h1>
+  <nav>
+    <!-- Navigation links here -->
+  </nav>
+  <div class="profile">
+    <img src="/src/assets/image/profile.png" alt="Profile Icon">
+    <div class="profile-info">
+      <h4>You are logged in as: Faculty</h4>
+      <p>Name: John Doe</p>
+      <p>Email: john.doe@example.com</p>
+      <p>Phone: 123-456-7890</p>
+	  <h6>&copy; 2023 CICT-Extension Office Management. All rights reserved.</h6>
+      <!-- Add more information as needed -->
+    </div>
+  </div>
+  <div class="dark-mode-toggle">
+    <input type="checkbox" id="dark-mode-checkbox">
+    <label for="dark-mode-checkbox"></label>
+  </div>
+  
+   <div class="notification">
+    <span id="notification-message"></span>
+  </div>
+  
+</header>
+
+
+
+	<div class="sidebar">
+		<ul>
+			<li><a href="fdashboard" class="active"><i class="fa fa-home"></i>Dashboard</a></li>
+			<li><a href="fprograms"><i class="fa fa-home"></i>Programs</a></li>
+      <li><a href="freport"><i class="fa fa-home"></i>Report</a></li>
+      <li><a href="fprofile"><i class="fa fa-home"></i>Profile</a></li>
+			<li><a href="login" onclick="return confirm('Are you sure you want to log out?');"><i class="fa fa-sign-out"></i>Logout</a></li>
+
+		</ul>
+	</div>
+    <div class="main">
+		<h1>MISSION</h1>
+		<h1>Bulacan State University exists to produce highly competent, ethical and service-oriented professionals that contribute to the sustainable socio-economic growth and development of the nation</h1>
+		<h1>VISION</h1>
+		<h1>Bulacan State University is a progressive knowledge-generating institution globally recognized for excellent instruction, pioneering research, and responsive community engagements</h1>
+		
+	</div>
+	
+	<div class="org">
+	<h1>Organizational Structure</h1>
+	<img src="/src/assets/image/hoho-transformed.png" alt="picture" width="1500px" height="700px">
+	</div>
+	
+	<div class ="process">
+	<h1>Process Guide</h1>
+	<img src="/src/assets/image/hoho-transformed.png" alt="picture" width="1500px" height="700px">
+	</div>
+
+	
+	<div id="file-preview">
+		<h1>Contact Us</h1>
+	</div>
+		<div class="container">
+		  <form action="#" method="post" class="center">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" required></textarea>
+			
+			<button type="submit">Send Message</button>
+		  </form>
+		</div>
+	
+	<script>
+const checkbox = document.getElementById('dark-mode-checkbox');
+checkbox.addEventListener('change', function() {
+  if (this.checked) {
+    document.body.classList.add('dark-mode');
+    showNotification('Dark mode is enabled');
+  } else {
+    document.body.classList.remove('dark-mode');
+    showNotification('Dark mode is disabled');
+  }
+});
+
+function showNotification(message) {
+  if (Notification.permission === 'granted') {
+    new Notification(message);
+  } else if (Notification.permission !== 'denied') {
+    Notification.requestPermission().then(function(permission) {
+      if (permission === 'granted') {
+        new Notification(message);
+      }
+    });
+  }
+}
+
+</script>
+
+		
+</body>
+</html>

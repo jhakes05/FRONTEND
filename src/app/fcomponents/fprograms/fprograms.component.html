@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Extension Management System - Faculty View</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/src/app/fcomponents/fprograms/fprograms.component.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+  <img src="/src/assets/image/logo.png" alt="Logo" width="50px" height="50px">
+  <h1>CICT - Extension Office Management System</h1>
+  <nav>
+    <!-- Navigation links here -->
+  </nav>
+  <div class="profile">
+    <img src="/src/assets/image/profile.png" alt="Profile Icon">
+    <div class="profile-info">
+      <h4>You are logged in as: faculty</h4>
+      <p>Name: John Doe</p>
+      <p>Email: john.doe@example.com</p>
+      <p>Phone: 123-456-7890</p>
+	  <h6>&copy; 2023 CICT-Extension Office Management. All rights reserved.</h6>
+      <!-- Add more information as needed -->
+    </div>
+  </div>
+  <div class="dark-mode-toggle">
+    <input type="checkbox" id="dark-mode-checkbox">
+    <label for="dark-mode-checkbox"></label>
+  </div>
+  
+   <div class="notification">
+    <span id="notification-message"></span>
+  </div>
+  
+</header>
+
+<div class="sidebar">
+	<ul>
+		<li><a href="fdashboard"><i class="fa fa-home"></i>Dashboard</a></li>
+		<li><a href="fprograms" class="active"><i class="fa fa-home"></i>Programs</a></li>
+  <li><a href="freport"><i class="fa fa-home"></i>Report</a></li>
+  <li><a href="fprofile"><i class="fa fa-home"></i>Profile</a></li>
+		<li><a href="login" onclick="return confirm('Are you sure you want to log out?');"><i class="fa fa-sign-out"></i>Logout</a></li>
+
+	</ul>
+</div>
+
+<div class="content">
+	<h2>Assigned Programs</h2>
+	<!-- Display a list of assigned programs here -->
+	<ul>
+		<li>
+			<h3>Program Title 1</h3>
+			<p>Date and Time: November 1, 2023</p>
+			<p>Place: XYZ Venue</p>
+			<p>Program Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Program Lead: John Doe</p>
+			<p>Program Members: Jane Smith, Mark Johnson</p>
+			<p>Participants: Department A</p>
+			<p>Program Flow: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Additional Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>Partner: ABC Company</p>
+			<ul>
+				<li><a href="/src/app/components/files/certificates_program1.pdf">Certificate</a></li>
+				<li><a href="/src/app/components/files/attendance_program1.xls">Participant's Attendance				</a></li>
+				<li><a href="/src/app/components/files/invitation_program1.pdf">Invitation</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Program Title 2</h3>
+			<!-- Display program details and related files for Program 2 -->
+		</li>
+		<!-- Add more assigned programs as needed -->
+	</ul>
+</div>
+		
+</body>
+</html>
+
